@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Rock. Papper. Scissors.</title>
 	<link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/style.css">	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	    crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
+
 <body>
-	
-<script src="assets/js/rps.js"></script>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="jumbotron">
+					<h1>Rock.</h1>
+					<h1>Paper.</h1>
+					<h1>Scissors.</h1>
+					<div class="col-xs-12">
+						<form id="movie-form">
+							<div class="input-group">
+								<input id="movie-input" type="text" class="form-control" placeholder="Name">
+								<span id="submit-add" class="input-group-addon"><a type="submit">SUBMIT</a></span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 gamearea player1">
+				<div class="ga-info-wrap">
+					<div class="ga-title">Player 1</div>
+					<div class="ga-image"><img src="assets/images/rps-icon-paper.png"></div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 gamearea info">
+				<div class="ga-info-wrap">
+					<div class="ga-title">Info Area</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4 gamearea player2">
+				<div class="ga-info-wrap">
+					<div class="ga-title">Player 2</div>
+					<div class="ga-image"><img src="assets/images/rps-icon-scissors.png"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/js/rps.js"></script>
 </body>
+
 </html>
