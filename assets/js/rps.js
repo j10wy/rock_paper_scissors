@@ -29,30 +29,38 @@ rps.thisPlayerID = null;
 
 $(document).ready(function () {
 
+	database.ref().once("value", function() {
+		database.ref().set({
+			turn: 1
+		});
+	});
+
 	// Get the number of players who have entered their name
 	rps.getPlayers = database.ref('players');
 
 	// Log the number of players as they are added or removed
 	rps.getPlayers.on('value', function (snap) {
+
 		// If it exists, store the players object from Firebase
 		var playersObj = snap.val();
-		
-		if (playersObj && playersObj[1]) {
-			// Player1 exists in the database, update rps.player1 and update the page 
-			rps.player1 = true;
-			$('h4.ga-title.player1').text(playersObj[1].name);
-
-		} else if (playersObj && playersObj[2]) {
-			// Player2 exists in the database, update rps.player1 and update the page 
-			rps.player2 = true;
-			$('h4.ga-title.player2').text("test");
-
-		} else {
-			// Player1/2 do not exist, clear out the player areas
-			console.log("Waiting for players to join");
-			$('h4.ga-title.player1').text("Player 1");
-			$('h4.ga-title.player2').text("Player 2");
-			$('form').show();
+		if (playersObj) {
+			if (playersObj[1] && !rps.player1) {
+				// Player1 exists in the database, update rps.player1 and update the page 
+				rps.player1 = true;
+				$('h4.ga-title.player1').text(playersObj[1].name);
+				console.log("playersObj[1]", playersObj[1]);
+			} else if (playersObj[2] && !rps.player2) {
+				// Player2 exists in the database, update rps.player2 and update the page 
+				rps.player2 = true;
+				$('h4.ga-title.player2').text(playersObj[2].name);
+				console.log("playersObj[2]", playersObj[2]);
+			} else {
+				// Player1/2 do not exist, clear out the player areas
+				console.log("Waiting for players to join");
+				$('h4.ga-title.player1').text("Player 1");
+				$('h4.ga-title.player2').text("Player 2");
+				$('form').show();
+			}
 		}
 	});
 
@@ -60,7 +68,6 @@ $(document).ready(function () {
 	rps.setPlayer = function (name) {
 		// Figure out if user is player 1 or 2
 		var playerID = (!rps.player1 ? 1 : 2);
-		rps['player' + playerID] = playerID;
 		rps.thisPlayerID = playerID;
 		console.log(">>> You are player", rps['player' + playerID]);
 
@@ -85,7 +92,7 @@ $(document).ready(function () {
 		// pass the value from the name field to rps.setPlayer 
 		var playerName = $('input#name-input').val();
 		rps.setPlayer(playerName);
-		
+
 	});
 
 	// prevent form submission
@@ -100,6 +107,6 @@ $(document).ready(function () {
 		$('div.name-area').append(`<h3>Hi ${name}! You are Player ${playerID}</h3>`);
 		$(`h4.ga-title.player${playerID}`).text(name);
 
-	};	
+	};
 
 });
