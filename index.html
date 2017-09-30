@@ -21,9 +21,9 @@
 				<div class="jumbotron">
 					<h1>Rock. Paper. Scissors.</h1>
 					<div class="col-xs-12 name-area">
-						<form id="movie-form">
+						<form>
 							<div class="input-group">
-								<input id="name-input" type="text" class="form-control" placeholder="Name">
+								<input id="player-name" type="text" class="form-control" placeholder="Name">
 								<span id="submit-add" class="input-group-addon"><a href="#" id="submit">SUBMIT</a></span>
 							</div>
 						</form>
@@ -35,7 +35,12 @@
 			<div class="col-xs-4 col-sm-4 gamearea player1">
 				<div class="ga-info-wrap">
 					<h4 class="ga-title player1"></h4>
-					<div class="ga-image"><img src="assets/images/rps-icon-rock-250.png"></div>
+					<ul class="selection"></ul>
+					<div class="selected"></div>
+					<div class="scoreboard">
+						<div class="scoreboard-wins"></div>
+						<div class="scoreboard-losses"></div>
+					  </div>
 				</div>
 			</div>
 			<div class="col-xs-4 col-sm-4 gamearea info">
@@ -46,8 +51,20 @@
 			<div class="col-xs-4 col-sm-4 gamearea player2">
 				<div class="ga-info-wrap">
 					<h4 class="ga-title player2"></h4>
-					<div class="ga-image"><img src="assets/images/rps-icon-rock-250.png"></div>
+					<ul class="selection"></ul>
+					<div class="selected"></div>
+					<div class="scoreboard">
+						<div class="scoreboard-wins"></div>
+						<div class="scoreboard-losses"></div>
+					  </div>
 				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="chatroom"></div>
+				<input type="text" id="chat-message">
+				<button id="chat-submit">Submit</button>
 			</div>
 		</div>
 	</div>

@@ -1,14 +1,20 @@
-html, body {
-	background:#0a0a0a;
+html,
+body {
+	background: #0a0a0a;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: 'Rubik Mono One', sans-serif;
 	text-align: center;
 }
 
 div.gamearea {
-	padding:5px;
+	padding: 5px;
 	text-align: center;
 }
 
@@ -16,25 +22,80 @@ div.gamearea div.ga-info-wrap {
 	min-height: 290px;
 }
 
-div.gamearea div.ga-info-wrap.background {
+/* div.gamearea div.ga-info-wrap.background {
 	background-color: #211b2f;
-}
+} */
 
 h4.ga-title {
-	color:#6efba2;
+	color: #6efba2;
 }
 
 div.jumbotron {
-	background-color:#2201a2 ;
-	color:white;
+	background-color: #2201a2;
+	color: white;
 	overflow: auto;
 	padding-bottom: 0px;
 }
 
 div.jumbotron form {
-	padding:0px 0px 28px;
+	padding: 0px 0px 28px;
 }
 
 img {
 	max-height: 250px;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	display: inline;
+	list-style-type: none;
+	text-align: left;
+	font-size: 26px;
+	color: white;
+	cursor: pointer;
+}
+
+li img {
+	width: 50px;
+	height: 50px;
+}
+
+div.scoreboard {
+	font-size: 18px;
+	color: white;
+}
+
+#chatroom,
+#chat-message,
+#chat-submit {
+	display: block;
+}
+
+div#chatroom {
+	width: 100%;
+	background: #211b2f;
+	border: 1px solid darkgray;
+	margin: 10px 0;
+	max-height: 200px;
+	overflow: scroll;
+	color:white;
+}
+
+input#chat-message {
+	width: 100%;
+	background: #211b2f;
+	border: 1px solid white;
+	color: white;
+}
+
+button#chat-submit {
+	width:200px;
+	padding:5px;
+	color: white;
+	background:#2201a2;
+	border:none;
+	margin:10px auto;
 }
