@@ -1,5 +1,10 @@
+html, body {
+	background:#0a0a0a;
+}
+
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Rubik Mono One', sans-serif;
+	text-align: center;
 }
 
 div.gamearea {
@@ -8,16 +13,28 @@ div.gamearea {
 }
 
 div.gamearea div.ga-info-wrap {
-	border:1px solid black;
 	min-height: 290px;
 }
 
-div.ga-title {
-	font-size: 18px;
-	font-weight: bold;
+div.gamearea div.ga-info-wrap.background {
+	background-color: #211b2f;
+}
+
+h4.ga-title {
+	color:#6efba2;
+}
+
+div.jumbotron {
+	background-color:#2201a2 ;
+	color:white;
+	overflow: auto;
+	padding-bottom: 0px;
+}
+
+div.jumbotron form {
+	padding:0px 0px 28px;
 }
 
 img {
-	width: 250px;
-	height: 250px;
+	max-height: 250px;
 }
